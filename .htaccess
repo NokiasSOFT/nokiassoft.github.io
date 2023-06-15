@@ -1,0 +1,13 @@
+RewriteBase /
+Options -Indexes
+IndexIgnore *
+ErrorDocument 404 /public_html/404.html
+<FilesMatch "\.(ini|enc)$">
+  ExpiresActive On
+  ExpiresDefault A1
+  Header append Cache-Control must-revalidate
+</FilesMatch>
+<Files "*.*">
+order deny,allow
+Allow from all
+</Files>
